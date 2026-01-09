@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/img_login" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to_carro_branch"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/primary_dark2"
+       />
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/sign_in_to_unlock_the_best_rental_deals_and_manage_your_bookings_with_ease"-->
+<!--            android:layout_marginTop="@dimen/_5sdp"-->
+<!--            android:paddingHorizontal="@dimen/_5sdp"-->
+<!--            android:textSize="@dimen/_10ssp"-->
+<!--            android:textColor="@color/secondary"-->
+<!--            android:layout_marginStart="@dimen/_15sdp"/>-->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:background="@drawable/edit_text_focusable_backgroung"
+            android:drawableStart="@drawable/icn_mali"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/secondary"
+            android:hint="@string/user_id"
+            android:inputType="textEmailAddress"
+            android:paddingVertical="@dimen/_8sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:shadowColor="@color/primary"
+            android:textColorHint="@color/gray" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:background="@drawable/edit_text_focusable_backgroung"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="@dimen/_5sdp"
+                android:drawableTint="@color/secondary"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:shadowColor="@color/secondary"
+                android:textColorHint="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_password_eye"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:src="@drawable/icn_password_eye"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/etPassword"
+                app:layout_constraintTop_toTopOf="@+id/etPassword" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:backgroundTint="@color/primary_dark2"
+            app:cornerRadius="@dimen/_10sdp"
+            android:text="@string/login_here"
+            android:layout_gravity="center"
+            android:textColor="@color/primary_light9"
+            android:textSize="@dimen/_15ssp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

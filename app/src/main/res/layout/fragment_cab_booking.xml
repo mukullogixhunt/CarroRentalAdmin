@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.fragment.booking.CabBookingFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cab_bookings"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_10sdp"/>
+
+    <!-- Tab Layout -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
+        android:backgroundTint="@color/primary_field">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:orientation="horizontal">
+
+            <!-- City Ride Tab -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCityRide"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_margin="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/primary">
+                <TextView
+                    android:id="@+id/tvCityRide"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/city_ride"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- One Way Tab -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOneWay"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_margin="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/white">
+                <TextView
+                    android:id="@+id/tvOneWay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_way"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Outstation Tab -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOutstation"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_margin="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/white">
+                <TextView
+                    android:id="@+id/tvOutstation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/outstation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Airport Tab -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAirport"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_margin="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/white">
+                <TextView
+                    android:id="@+id/tvAirport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/airport"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/lvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_50sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/no_data_vector" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/no_bookings_yet"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="@string/we_ll_let_you_know_when_there_will_be_something_to_update_you"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.fragment.booking.CabBookingFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cab_bookings"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/_10sdp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvCab"/>
+
+    <LinearLayout
+        android:id="@+id/lvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/no_data_vector" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/no_bookings_yet"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:text="@string/we_ll_let_you_know_when_there_will_be_something_to_update_you"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>-->
