@@ -54,7 +54,7 @@ public class NotificationListAdapter extends RecyclerView.Adapter<NotificationLi
         holder.binding.tvTime.setText(DateFormater.changeDateFormat(Constant.HHMMSS, Constant.HHMMSSA, item.getmNotifTime()));
 
         // Set read/unread style
-        if (item.isRead()) {
+        if (item.getmNotifStatus().equals("Read")) {
             holder.binding.tvTitle.setTextColor(Color.GRAY);
             holder.binding.tvMsg.setTextColor(Color.GRAY);
             holder.binding.tvTitle.setTypeface(null, Typeface.NORMAL);

@@ -44,11 +44,17 @@ public class NotificationListModel {
     @SerializedName("m_bking_id")
     @Expose
     private String mBkingId;
+    @SerializedName("m_notif_status")
+    @Expose
+    private String mNotifStatus;
 
+    public String getmNotifStatus() {
+        return mNotifStatus;
+    }
 
-
-
-
+    public void setmNotifStatus(String mNotifStatus) {
+        this.mNotifStatus = mNotifStatus;
+    }
 
     @SerializedName("m_booking_id")
     @Expose

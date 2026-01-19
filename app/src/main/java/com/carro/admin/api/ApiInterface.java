@@ -1,6 +1,5 @@
 package com.carro.admin.api;
 
-import com.carro.admin.api.request.NotificationRequest;
 import com.carro.admin.api.response.BookingDetailsResponse;
 import com.carro.admin.api.response.BookingIdResponse;
 import com.carro.admin.api.response.BookingListResponse;
