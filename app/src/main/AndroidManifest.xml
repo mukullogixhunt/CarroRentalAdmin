@@ -10,8 +10,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
@@ -28,7 +27,7 @@
         android:theme="@style/Theme.CarroRentalAdmin"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.TheMainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.activity.SubsDetailsActivity"
@@ -65,9 +64,7 @@
         <activity
             android:name=".ui.activity.LoginActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ui.activity.SplashActivity"
             android:exported="true">
@@ -77,6 +74,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <service
+            android:name=".firebase.MyFirebaseInstanceIdService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="TODO">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="TODO">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".firebase.NotificationReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

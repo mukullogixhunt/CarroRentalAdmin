@@ -6,14 +6,14 @@
     app:startDestination="@id/nav_dashboard">
     <fragment
         android:id="@+id/nav_dashboard"
-        android:name="com.logixhunt.carrorentaladmin.ui.fragment.DashBoardFragment"
+        android:name="com.carro.admin.ui.fragment.DashBoardFragment"
         tools:layout="@layout/fragment_dash_board"/>
     <fragment
         android:id="@+id/nav_bookings"
-        android:name="com.logixhunt.carrorentaladmin.ui.fragment.BookingsFragment"
+        android:name="com.carro.admin.ui.fragment.BookingsFragment"
         tools:layout="@layout/fragment_bookings"/>
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.logixhunt.carrorentaladmin.ui.fragment.ProfileFragment"
+        android:name="com.carro.admin.ui.fragment.ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
 </navigation>
