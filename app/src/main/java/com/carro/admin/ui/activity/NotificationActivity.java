@@ -14,7 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.carro.admin.api.request.NotificationRequest;
 import com.carro.admin.utils.RequestBodyUtils;
 import com.google.gson.Gson;
 import com.carro.admin.R;
