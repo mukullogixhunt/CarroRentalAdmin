@@ -70,6 +70,7 @@
     <string name="insert_notification">Insert Notification</string>
     <string name="insert_customer_notification">Send Customer Notification</string>
     <string name="insert_vendor_notification">Send Vendor Notification</string>
+    <string name="insert_logout">Logout</string>
     <string name="title">Title</string>
     <string name="customer_name">Customer Name</string>
     <string name="message">Message</string>

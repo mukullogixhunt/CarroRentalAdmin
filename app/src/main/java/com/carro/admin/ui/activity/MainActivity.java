@@ -7,10 +7,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -155,6 +157,17 @@ public class MainActivity extends AppCompatActivity {
             Intent intent=new Intent(MainActivity.this,InsertNotificationActivity.class);
             intent.putExtra(Constant.BundleExtras.NOTIFICATION_TYPE,"2");
             startActivity(intent);
+            return false;
+        });
+
+        binding.navView.getMenu().findItem(R.id.nav_notification_logout).setOnMenuItemClickListener(menuItem -> {
+            PreferenceUtils.removeKey(Constant.PreferenceConstant.USER_DATA,this);
+            PreferenceUtils.removeKey(Constant.PreferenceConstant.USER_ID, this);
+            PreferenceUtils.removeKey(Constant.PreferenceConstant.IS_LOGIN, this);
+            showAlert("LoggedOut Successfully");
+            Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+            startActivity(intent);
+            finishAffinity();
             return false;
         });
 
@@ -319,5 +332,12 @@ public class MainActivity extends AppCompatActivity {
                 super.onBackPressed();
             }
         }
+    }
+
+    public void showAlert(String msg) {
+        if (msg == null) return;
+        Toast toast = Toast.makeText(getApplicationContext(), "" + msg, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 }
