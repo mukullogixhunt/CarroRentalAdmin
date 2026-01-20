@@ -119,6 +119,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -128,6 +129,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
+import com.carro.admin.utils.ImagePathDecider;
 import com.google.gson.Gson;
 import com.carro.admin.R;
 import com.carro.admin.api.ApiClient;
@@ -198,6 +202,7 @@ public class SubsDetailsActivity extends BaseActivity {
 
         // Booking Details
         setRowData(binding.rowBookingId.getRoot(), "Booking ID", formatValue("#", subscriptionModel.getmBookingId(), ""));
+        setRowData(binding.rowBookingService.getRoot(), "Service", "Self Drive Service (Subscription)");
         String bookingStatus = "Pending";
         switch (subscriptionModel.getmBkingStatus()) { case "2": bookingStatus = "Accepted"; break; case "3": bookingStatus = "Completed"; break; case "4": bookingStatus = "Cancelled"; break; }
         setRowDataWithStyling(binding.rowBookingStatus.getRoot(), "Status", bookingStatus, R.drawable.status_pending_background, R.color.brown);
@@ -240,6 +245,16 @@ public class SubsDetailsActivity extends BaseActivity {
         checkSectionVisibility(binding.containerCustomerData, binding.tvNoCustomerData,
                 binding.rowCustomerName.getRoot(), binding.rowCustomerMobile.getRoot(), binding.rowCustomerCity.getRoot());
 
+        // Car Type Details
+        setRowData(binding.rowCarTypeName.getRoot(), "Type", subscriptionModel.getmCtypeTitle());
+        setRowData(binding.rowDriveType.getRoot(), "Mode", "1".equals(subscriptionModel.getmCTypeDriveType()) ? "Manual" : "Automatic");
+        setRowData(binding.rowSeat.getRoot(), "Seat", subscriptionModel.getmCTypeSeat());
+        setRowData(binding.rowCTCarNumber.getRoot(), "Car Number", subscriptionModel.getmCTypeNumber());
+        setRowData(binding.rowCtLuggage.getRoot(), "Luggage", subscriptionModel.getmCTypeLuggage());
+        setRowData(binding.rowCtFuel.getRoot(), "Fuel", subscriptionModel.getmCTypeFuel());
+        checkSectionVisibility(binding.containerCarTypeData, binding.tvNoCarTypeData,
+                binding.rowCarTypeName.getRoot(), binding.rowDriveType.getRoot(), binding.rowSeat.getRoot(),binding.rowCTCarNumber.getRoot(),binding.rowCtLuggage.getRoot(),binding.rowCtFuel.getRoot());
+
         // Subscription Details
         setRowData(binding.rowSubscriptionDays.getRoot(), "Days", formatValue("", subscriptionModel.getmSubsDay(), " Days"));
         setRowData(binding.rowSubscriptionPrice.getRoot(), "Price", formatValue("₹ ", subscriptionModel.getmSubsPrice(), ""));
@@ -253,7 +268,27 @@ public class SubsDetailsActivity extends BaseActivity {
         String amountPaid = (subscriptionModel.getmBkingPaidAmt() == null || subscriptionModel.getmBkingPaidAmt().trim().isEmpty()) ? "0" : subscriptionModel.getmBkingPaidAmt();
         setRowData(binding.rowAmountPaid.getRoot(), "Amount Paid", formatValue("₹ ", amountPaid, ""));
         setRowData(binding.rowAmountRemains.getRoot(), "Amount Remains", formatValue("₹ ", subscriptionModel.getmBkingRemainAmt(), ""));
-        setRowData(binding.rowPaymode.getRoot(), "Paymode", "1".equals(subscriptionModel.getmBkingPaymode()) ? "Online" : "Cash");
+        setRowData(binding.rowPaymode.getRoot(), "Paymode", subscriptionModel.getmBkingPaymode());
+
+        // Verification Image Details
+          //side images
+        setImgData(binding.imgSideV1,  subscriptionModel.getmBkingSideImg1());
+        setImgData(binding.imgSideV2,  subscriptionModel.getmBkingSideImg2());
+        setImgData(binding.imgSideV3,  subscriptionModel.getmBkingSideImg3());
+        setImgData(binding.imgSideV4,  subscriptionModel.getmBkingSideImg4());
+          //interior images
+        setImgData(binding.imgInteriorV1,  subscriptionModel.getmBkingIntImg1());
+        setImgData(binding.imgInteriorV2,  subscriptionModel.getmBkingIntImg2());
+        //meter
+        setImgData(binding.imgMeterV1,  subscriptionModel.getmBkingMeterImg());
+        //toolkit
+        setImgData(binding.imgToolkitV1,  subscriptionModel.getmBkingToolkitImg());
+        //Sphare Tyre
+        setImgData(binding.imgSphareTyre,  subscriptionModel.getmBkingSphareTyre());
+        //scratch
+        setImgData(binding.imgScratch,  subscriptionModel.getmBkingScratch());
+        //remark
+        setRowData(binding.rowVRemark.getRoot(), "Remark", subscriptionModel.getmBkingRemark());
 
         String paymentStatus = "Unpaid";
         if ("1".equals(subscriptionModel.getmBkingPayStatus())) paymentStatus = "Paid";
@@ -273,6 +308,19 @@ public class SubsDetailsActivity extends BaseActivity {
         TextView tvValue = row.findViewById(R.id.tvValue);
         tvLabel.setText(label);
         tvValue.setText(value);
+    }
+    private void setImgData(ImageView img,String imgUrl) {
+        if (imgUrl == null || imgUrl.trim().isEmpty() || imgUrl.equalsIgnoreCase("N/A")) {
+            img.setVisibility(View.GONE);
+            return;
+        }
+        img.setVisibility(View.VISIBLE);
+        Glide.with(img.getContext())
+                .load(imgUrl)
+                .placeholder(android.R.color.darker_gray)
+                .dontTransform()
+                .override(Target.SIZE_ORIGINAL)
+                .into(img);
     }
 
     private void setRowDataWithStyling(View row, String label, String value, int backgroundRes, int textColor) {

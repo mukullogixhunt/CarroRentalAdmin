@@ -172,6 +172,195 @@ public class SubscriptionModel {
     @SerializedName("m_subs_price")
     @Expose
     private String mSubsPrice;
+    @SerializedName("m_ctype_luggage")
+    @Expose
+    private String mCTypeLuggage;
+    @SerializedName("m_ctype_fuel")
+    @Expose
+    private String mCTypeFuel;
+    @SerializedName("m_ctype_drivetype")
+    @Expose
+    private String mCTypeDriveType;
+    @SerializedName("m_bking_side_img1")
+    @Expose
+    private String mBkingSideImg1;
+
+    @SerializedName("m_bking_side_img2")
+    @Expose
+    private String mBkingSideImg2;
+
+    @SerializedName("m_bking_side_img3")
+    @Expose
+    private String mBkingSideImg3;
+
+    @SerializedName("m_bking_side_img4")
+    @Expose
+    private String mBkingSideImg4;
+
+    @SerializedName("m_bking_int_img1")
+    @Expose
+    private String mBkingIntImg1;
+
+    @SerializedName("m_bking_int_img2")
+    @Expose
+    private String mBkingIntImg2;
+
+    @SerializedName("m_bking_meter_img")
+    @Expose
+    private String mBkingMeterImg;
+
+    @SerializedName("m_bking_toolkit_img")
+    @Expose
+    private String mBkingToolkitImg;
+
+    public String getmBkingRemark() {
+        return mBkingRemark;
+    }
+
+    public void setmBkingRemark(String mBkingRemark) {
+        this.mBkingRemark = mBkingRemark;
+    }
+
+    public String getmBkingScratch() {
+        return mBkingScratch;
+    }
+
+    public void setmBkingScratch(String mBkingScratch) {
+        this.mBkingScratch = mBkingScratch;
+    }
+
+    public String getmBkingSphareTyre() {
+        return mBkingSphareTyre;
+    }
+
+    public void setmBkingSphareTyre(String mBkingSphareTyre) {
+        this.mBkingSphareTyre = mBkingSphareTyre;
+    }
+
+    public String getmBkingToolkitImg() {
+        return mBkingToolkitImg;
+    }
+
+    public void setmBkingToolkitImg(String mBkingToolkitImg) {
+        this.mBkingToolkitImg = mBkingToolkitImg;
+    }
+
+    public String getmBkingMeterImg() {
+        return mBkingMeterImg;
+    }
+
+    public void setmBkingMeterImg(String mBkingMeterImg) {
+        this.mBkingMeterImg = mBkingMeterImg;
+    }
+
+    public String getmBkingIntImg2() {
+        return mBkingIntImg2;
+    }
+
+    public void setmBkingIntImg2(String mBkingIntImg2) {
+        this.mBkingIntImg2 = mBkingIntImg2;
+    }
+
+    public String getmBkingIntImg1() {
+        return mBkingIntImg1;
+    }
+
+    public void setmBkingIntImg1(String mBkingIntImg1) {
+        this.mBkingIntImg1 = mBkingIntImg1;
+    }
+
+    public String getmBkingSideImg4() {
+        return mBkingSideImg4;
+    }
+
+    public void setmBkingSideImg4(String mBkingSideImg4) {
+        this.mBkingSideImg4 = mBkingSideImg4;
+    }
+
+    public String getmBkingSideImg3() {
+        return mBkingSideImg3;
+    }
+
+    public void setmBkingSideImg3(String mBkingSideImg3) {
+        this.mBkingSideImg3 = mBkingSideImg3;
+    }
+
+    public String getmBkingSideImg2() {
+        return mBkingSideImg2;
+    }
+
+    public void setmBkingSideImg2(String mBkingSideImg2) {
+        this.mBkingSideImg2 = mBkingSideImg2;
+    }
+
+    public String getmBkingSideImg1() {
+        return mBkingSideImg1;
+    }
+
+    public void setmBkingSideImg1(String mBkingSideImg1) {
+        this.mBkingSideImg1 = mBkingSideImg1;
+    }
+
+    @SerializedName("m_bking_sphare_tyre")
+    @Expose
+    private String mBkingSphareTyre;
+
+    @SerializedName("m_bking_scratch")
+    @Expose
+    private String mBkingScratch;
+
+    @SerializedName("m_bking_remark")
+    @Expose
+    private String mBkingRemark;
+
+
+    public String getmCTypeNumber() {
+        return mCTypeNumber;
+    }
+
+    public void setmCTypeNumber(String mCTypeNumber) {
+        this.mCTypeNumber = mCTypeNumber;
+    }
+
+    @SerializedName("m_ctype_number")
+    @Expose
+    private String mCTypeNumber;
+
+    public String getmCTypeDriveType() {
+        return mCTypeDriveType;
+    }
+
+    public void setmCTypeDriveType(String mCTypeDriveType) {
+        this.mCTypeDriveType = mCTypeDriveType;
+    }
+
+    public String getmCTypeFuel() {
+        return mCTypeFuel;
+    }
+
+    public void setmCTypeFuel(String mCTypeFuel) {
+        this.mCTypeFuel = mCTypeFuel;
+    }
+
+    public String getmCTypeLuggage() {
+        return mCTypeLuggage;
+    }
+
+    public void setmCTypeLuggage(String mCTypeLuggage) {
+        this.mCTypeLuggage = mCTypeLuggage;
+    }
+
+    public String getmCTypeSeat() {
+        return mCTypeSeat;
+    }
+
+    public void setmCTypeSeat(String mCTypeSeat) {
+        this.mCTypeSeat = mCTypeSeat;
+    }
+
+    @SerializedName("m_ctype_seat")
+    @Expose
+    private String mCTypeSeat;
 
     public String getmBkingId() {
         return mBkingId;
