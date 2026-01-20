@@ -216,11 +216,19 @@ public class BookingDetailsActivity extends BaseActivity {
                 binding.rowCustomerName.getRoot(), binding.rowCustomerMobile.getRoot(), binding.rowCustomerCity.getRoot());
 
         // 4. Set Vendor Details
-        setRowData(binding.rowVendorName.getRoot(), "Vendor Name", bookingListModels.getmVendorName());
-        setRowData(binding.rowVendorMobile.getRoot(), "Mobile No.", formatValue("+91 ", bookingListModels.getmVendorMobile(), ""));
-        setRowData(binding.rowVendorCity.getRoot(), "City", bookingListModels.getmVendorCity());
-        checkSectionVisibility(binding.containerVendorData, binding.tvNoVendorData,
-                binding.rowVendorName.getRoot(), binding.rowVendorMobile.getRoot(), binding.rowVendorCity.getRoot());
+
+            setRowData(binding.rowVendorName.getRoot(), "Vendor Name", bookingListModels.getmVendorName());
+            setRowData(binding.rowVendorMobile.getRoot(), "Mobile No.", formatValue("+91 ", bookingListModels.getmVendorMobile(), ""));
+            setRowData(binding.rowVendorCity.getRoot(), "City", bookingListModels.getmVendorCity());
+            checkSectionVisibility(binding.containerVendorData, binding.tvNoVendorData,
+                    binding.rowVendorName.getRoot(), binding.rowVendorMobile.getRoot(), binding.rowVendorCity.getRoot());
+
+        if (bookingTypeId.equals("1")) {
+            binding.vendorCard.setVisibility(View.VISIBLE);
+        }else{
+            binding.vendorCard.setVisibility(View.GONE);
+        }
+
 
         // 5. Set Dynamic Sections (Car/Bus)
         binding.cardCarDetails.setVisibility(View.GONE);
@@ -228,6 +236,7 @@ public class BookingDetailsActivity extends BaseActivity {
 
         switch (bookingTypeId) {
             case "1": // Cab
+                binding.vendorCard.setVisibility(View.VISIBLE);
             case "3": // Luxury
                 binding.cardCarDetails.setVisibility(View.VISIBLE);
                 setRowData(binding.rowCarTypeName.getRoot(), "Car Type Name", bookingListModels.getmCtypeTitle());
