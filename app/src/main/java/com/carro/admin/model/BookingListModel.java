@@ -550,6 +550,91 @@ public class BookingListModel implements Serializable {
     @Expose
     private String mCarPermitType;
 
+    @SerializedName("m_bking_meal_provide")
+    @Expose
+    private String mBkingMealProvide;
+
+    @SerializedName("m_bking_toll_tax")
+    @Expose
+    private String mBkingTollTax;
+
+    @SerializedName("m_bking_toll_tax_img")
+    @Expose
+    private String mBkingTollTaxImg;
+
+    @SerializedName("m_bking_parking")
+    @Expose
+    private String mBkingParking;
+
+    public String getmBkingMealProvide() {
+        return mBkingMealProvide;
+    }
+
+    public void setmBkingMealProvide(String mBkingMealProvide) {
+        this.mBkingMealProvide = mBkingMealProvide;
+    }
+
+    public String getmBkingTollTax() {
+        return mBkingTollTax;
+    }
+
+    public void setmBkingTollTax(String mBkingTollTax) {
+        this.mBkingTollTax = mBkingTollTax;
+    }
+
+    public String getmBkingTollTaxImg() {
+        return mBkingTollTaxImg;
+    }
+
+    public void setmBkingTollTaxImg(String mBkingTollTaxImg) {
+        this.mBkingTollTaxImg = mBkingTollTaxImg;
+    }
+
+    public String getmBkingParking() {
+        return mBkingParking;
+    }
+
+    public void setmBkingParking(String mBkingParking) {
+        this.mBkingParking = mBkingParking;
+    }
+
+    public String getmBkingParkingImg() {
+        return mBkingParkingImg;
+    }
+
+    public void setmBkingParkingImg(String mBkingParkingImg) {
+        this.mBkingParkingImg = mBkingParkingImg;
+    }
+
+    public String getmBkingOtherTitle() {
+        return mBkingOtherTitle;
+    }
+
+    public void setmBkingOtherTitle(String mBkingOtherTitle) {
+        this.mBkingOtherTitle = mBkingOtherTitle;
+    }
+
+    public String getmBkingOtherImg() {
+        return mBkingOtherImg;
+    }
+
+    public void setmBkingOtherImg(String mBkingOtherImg) {
+        this.mBkingOtherImg = mBkingOtherImg;
+    }
+
+    @SerializedName("m_bking_parking_img")
+    @Expose
+    private String mBkingParkingImg;
+
+    @SerializedName("m_bking_other_title")
+    @Expose
+    private String mBkingOtherTitle;
+
+    @SerializedName("m_bking_other_img")
+    @Expose
+    private String mBkingOtherImg;
+
+
     public String getmCarTaxUpto() {
         return mCarTaxUpto;
     }
