@@ -55,4 +55,62 @@ public class DateFormater {
         return null;
     }
 
+
+    public static String formatTimestamp(String value) {
+
+        if (value == null) return "";
+
+        value = value.trim();
+
+        // Empty or invalid values
+        if (value.isEmpty()
+                || value.equalsIgnoreCase("null")
+                || value.equals("0")
+                || value.equals("0000-00-00")
+                || value.equals("0000-00-00 00:00:00")) {
+            return "";
+        }
+
+        try {
+            // 1️⃣ Milliseconds timestamp (13 digit)
+            if (value.matches("\\d{13}")) {
+                long millis = Long.parseLong(value);
+                return new SimpleDateFormat(
+                        "dd-MM-yyyy hh:mm a",
+                        Locale.getDefault()
+                ).format(new Date(millis));
+            }
+
+            // 2️⃣ Seconds timestamp (10 digit)
+            if (value.matches("\\d{10}")) {
+                long millis = Long.parseLong(value) * 1000;
+                return new SimpleDateFormat(
+                        "dd-MM-yyyy hh:mm a",
+                        Locale.getDefault()
+                ).format(new Date(millis));
+            }
+
+            // 3️⃣ Date only → yyyy-MM-dd
+            if (value.length() == 10) {
+                return changeDateFormat(
+                        "yyyy-MM-dd",
+                        "dd-MM-yyyy",
+                        value
+                );
+            }
+
+            // 4️⃣ DateTime → yyyy-MM-dd HH:mm:ss
+            return changeDateFormat(
+                    "yyyy-MM-dd HH:mm:ss",
+                    "dd-MM-yyyy hh:mm a",
+                    value
+            );
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+
 }

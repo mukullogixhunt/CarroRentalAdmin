@@ -374,6 +374,18 @@ public class BookingListModel implements Serializable {
     @SerializedName("m_driver_mobile")
     @Expose
     private String mDriverMobile;
+    @SerializedName("m_driver_dl_exdate")
+    @Expose
+    private String mDriverLicExDate;
+
+    public String getmDriverLicExDate() {
+        return mDriverLicExDate;
+    }
+
+    public void setmDriverLicExDate(String mDriverLicExDate) {
+        this.mDriverLicExDate = mDriverLicExDate;
+    }
+
     @SerializedName("m_driver_img")
     @Expose
     private String mDriverImg;
@@ -428,6 +440,360 @@ public class BookingListModel implements Serializable {
     @SerializedName("m_branch_updatedon")
     @Expose
     private String mBranchUpdatedon;
+    @SerializedName("m_car_id")
+    @Expose
+    private String mCarId;
+
+    @SerializedName("m_car_name")
+    @Expose
+    private String mCarName;
+
+    @SerializedName("m_car_number")
+    @Expose
+    private String mCarNumber;
+
+    @SerializedName("m_car_fuel")
+    @Expose
+    private String mCarFuel;
+    @SerializedName("m_car_fit_up_to")
+    @Expose
+    private String mCarFitUpto;
+
+    @SerializedName("m_car_registration_date")
+    @Expose
+    private String mCarRegistrationDate;
+    @SerializedName("m_car_Owner_name")
+    @Expose
+    private String mCarOwnerName;
+
+    @SerializedName("m_car_father_name")
+    @Expose
+    private String mCarFatherName;
+
+    @SerializedName("m_car_present_address")
+    @Expose
+    private String mCarPresentAddress;
+
+    @SerializedName("m_car_permanent_address")
+    @Expose
+    private String mCarPermanentAddress;
+    @SerializedName("m_car_vehicle_category")
+    @Expose
+    private String mCarVehicleCategory;
+
+    @SerializedName("m_car_vehicle_chasi_number")
+    @Expose
+    private String mCarChassisNumber;
+
+    @SerializedName("m_car_vehicle_engine_number")
+    @Expose
+    private String mCarEngineNumber;
+    @SerializedName("m_car_maker_description")
+    @Expose
+    private String mCarMaker;
+
+    @SerializedName("m_car_maker_model")
+    @Expose
+    private String mCarModel;
+
+    @SerializedName("m_car_body_type")
+    @Expose
+    private String mCarBodyType;
+
+    @SerializedName("m_car_color")
+    @Expose
+    private String mCarColor;
+
+    @SerializedName("m_car_manufacturing_date")
+    @Expose
+    private String mCarManufacturingDate;
+    @SerializedName("m_car_insurance_company")
+    @Expose
+    private String mCarInsuranceCompany;
+
+    @SerializedName("m_car_insurance_policy_number")
+    @Expose
+    private String mCarInsurancePolicyNumber;
+
+    @SerializedName("m_car_insurance_upto")
+    @Expose
+    private String mCarInsuranceUpto;
+
+    @SerializedName("m_car_tax_upto")
+    @Expose
+    private String mCarTaxUpto;
+
+    @SerializedName("m_car_pucc_number")
+    @Expose
+    private String mCarPuccNumber;
+
+    @SerializedName("m_car_pucc_upto")
+    @Expose
+    private String mCarPuccUpto;
+    @SerializedName("m_car_permit_number")
+    @Expose
+    private String mCarPermitNumber;
+
+    @SerializedName("m_car_permit_issue_date")
+    @Expose
+    private String mCarPermitIssueDate;
+
+    @SerializedName("m_car_permit_valid_from")
+    @Expose
+    private String mCarPermitValidFrom;
+
+    @SerializedName("m_car_permit_valid_upto")
+    @Expose
+    private String mCarPermitValidUpto;
+
+    @SerializedName("m_car_permit_type")
+    @Expose
+    private String mCarPermitType;
+
+    public String getmCarTaxUpto() {
+        return mCarTaxUpto;
+    }
+
+    public void setmCarTaxUpto(String mCarTaxUpto) {
+        this.mCarTaxUpto = mCarTaxUpto;
+    }
+
+    public String getmCarId() {
+        return mCarId;
+    }
+
+    public void setmCarId(String mCarId) {
+        this.mCarId = mCarId;
+    }
+
+    public String getmCarName() {
+        return mCarName;
+    }
+
+    public void setmCarName(String mCarName) {
+        this.mCarName = mCarName;
+    }
+
+    public String getmCarNumber() {
+        return mCarNumber;
+    }
+
+    public void setmCarNumber(String mCarNumber) {
+        this.mCarNumber = mCarNumber;
+    }
+
+    public String getmCarFuel() {
+        return mCarFuel;
+    }
+
+    public void setmCarFuel(String mCarFuel) {
+        this.mCarFuel = mCarFuel;
+    }
+
+    public String getmCarFitUpto() {
+        return mCarFitUpto;
+    }
+
+    public void setmCarFitUpto(String mCarFitUpto) {
+        this.mCarFitUpto = mCarFitUpto;
+    }
+
+    public String getmCarRegistrationDate() {
+        return mCarRegistrationDate;
+    }
+
+    public void setmCarRegistrationDate(String mCarRegistrationDate) {
+        this.mCarRegistrationDate = mCarRegistrationDate;
+    }
+
+    public String getmCarOwnerName() {
+        return mCarOwnerName;
+    }
+
+    public void setmCarOwnerName(String mCarOwnerName) {
+        this.mCarOwnerName = mCarOwnerName;
+    }
+
+    public String getmCarFatherName() {
+        return mCarFatherName;
+    }
+
+    public void setmCarFatherName(String mCarFatherName) {
+        this.mCarFatherName = mCarFatherName;
+    }
+
+    public String getmCarPresentAddress() {
+        return mCarPresentAddress;
+    }
+
+    public void setmCarPresentAddress(String mCarPresentAddress) {
+        this.mCarPresentAddress = mCarPresentAddress;
+    }
+
+    public String getmCarPermanentAddress() {
+        return mCarPermanentAddress;
+    }
+
+    public void setmCarPermanentAddress(String mCarPermanentAddress) {
+        this.mCarPermanentAddress = mCarPermanentAddress;
+    }
+
+    public String getmCarVehicleCategory() {
+        return mCarVehicleCategory;
+    }
+
+    public void setmCarVehicleCategory(String mCarVehicleCategory) {
+        this.mCarVehicleCategory = mCarVehicleCategory;
+    }
+
+    public String getmCarChassisNumber() {
+        return mCarChassisNumber;
+    }
+
+    public void setmCarChassisNumber(String mCarChassisNumber) {
+        this.mCarChassisNumber = mCarChassisNumber;
+    }
+
+    public String getmCarEngineNumber() {
+        return mCarEngineNumber;
+    }
+
+    public void setmCarEngineNumber(String mCarEngineNumber) {
+        this.mCarEngineNumber = mCarEngineNumber;
+    }
+
+    public String getmCarMaker() {
+        return mCarMaker;
+    }
+
+    public void setmCarMaker(String mCarMaker) {
+        this.mCarMaker = mCarMaker;
+    }
+
+    public String getmCarModel() {
+        return mCarModel;
+    }
+
+    public void setmCarModel(String mCarModel) {
+        this.mCarModel = mCarModel;
+    }
+
+    public String getmCarBodyType() {
+        return mCarBodyType;
+    }
+
+    public void setmCarBodyType(String mCarBodyType) {
+        this.mCarBodyType = mCarBodyType;
+    }
+
+    public String getmCarColor() {
+        return mCarColor;
+    }
+
+    public void setmCarColor(String mCarColor) {
+        this.mCarColor = mCarColor;
+    }
+
+    public String getmCarManufacturingDate() {
+        return mCarManufacturingDate;
+    }
+
+    public void setmCarManufacturingDate(String mCarManufacturingDate) {
+        this.mCarManufacturingDate = mCarManufacturingDate;
+    }
+
+    public String getmCarInsuranceCompany() {
+        return mCarInsuranceCompany;
+    }
+
+    public void setmCarInsuranceCompany(String mCarInsuranceCompany) {
+        this.mCarInsuranceCompany = mCarInsuranceCompany;
+    }
+
+    public String getmCarInsurancePolicyNumber() {
+        return mCarInsurancePolicyNumber;
+    }
+
+    public void setmCarInsurancePolicyNumber(String mCarInsurancePolicyNumber) {
+        this.mCarInsurancePolicyNumber = mCarInsurancePolicyNumber;
+    }
+
+    public String getmCarInsuranceUpto() {
+        return mCarInsuranceUpto;
+    }
+
+    public void setmCarInsuranceUpto(String mCarInsuranceUpto) {
+        this.mCarInsuranceUpto = mCarInsuranceUpto;
+    }
+
+    public String getmCarPuccNumber() {
+        return mCarPuccNumber;
+    }
+
+    public void setmCarPuccNumber(String mCarPuccNumber) {
+        this.mCarPuccNumber = mCarPuccNumber;
+    }
+
+    public String getmCarPuccUpto() {
+        return mCarPuccUpto;
+    }
+
+    public void setmCarPuccUpto(String mCarPuccUpto) {
+        this.mCarPuccUpto = mCarPuccUpto;
+    }
+
+    public String getmCarPermitNumber() {
+        return mCarPermitNumber;
+    }
+
+    public void setmCarPermitNumber(String mCarPermitNumber) {
+        this.mCarPermitNumber = mCarPermitNumber;
+    }
+
+    public String getmCarPermitIssueDate() {
+        return mCarPermitIssueDate;
+    }
+
+    public void setmCarPermitIssueDate(String mCarPermitIssueDate) {
+        this.mCarPermitIssueDate = mCarPermitIssueDate;
+    }
+
+    public String getmCarPermitValidFrom() {
+        return mCarPermitValidFrom;
+    }
+
+    public void setmCarPermitValidFrom(String mCarPermitValidFrom) {
+        this.mCarPermitValidFrom = mCarPermitValidFrom;
+    }
+
+    public String getmCarPermitValidUpto() {
+        return mCarPermitValidUpto;
+    }
+
+    public void setmCarPermitValidUpto(String mCarPermitValidUpto) {
+        this.mCarPermitValidUpto = mCarPermitValidUpto;
+    }
+
+    public String getmCarPermitType() {
+        return mCarPermitType;
+    }
+
+    public void setmCarPermitType(String mCarPermitType) {
+        this.mCarPermitType = mCarPermitType;
+    }
+
+    public String getmCarNonUseStatus() {
+        return mCarNonUseStatus;
+    }
+
+    public void setmCarNonUseStatus(String mCarNonUseStatus) {
+        this.mCarNonUseStatus = mCarNonUseStatus;
+    }
+
+    @SerializedName("m_car_non_use_status")
+    @Expose
+    private String mCarNonUseStatus;
+
 
     public String getmBkingId() {
         return mBkingId;

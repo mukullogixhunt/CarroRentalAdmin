@@ -252,6 +252,129 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Driver Details Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDriverDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp"
+            app:strokeWidth="0dp"
+            tools:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_header_background_customer"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="Driver Details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/containerDriverData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowDriverName"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowDriverMoNo"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowLicExpiry"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvNoDriverData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/_20sdp"
+                    android:text="No Driver Data Available"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/_11ssp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Car Details Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCar2Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_5sdp"
+            app:strokeWidth="0dp"
+            tools:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/card_header_background_customer"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:text="Car Details"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/containerCar2Data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp">
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowCar2Number"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowFuelType"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowFitUpTo"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowRegistrationDate"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowOwnerName"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowFatherName"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPresentAddress"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPermanentAddress"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowVehicleCategory"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowChassisNumber"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowEngineNumber"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowMaker"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowModel"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowBodyType"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowColor"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowManufacturingDate"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowInsuranceCompany"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPolicyNumber"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowInsuranceValidUpto"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowTaxValidUpto"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPuccNumber"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPuccValidUpto"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPermitNumber"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPermitIssueDate"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPermitValidFrom"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPermitValidUpto"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowPermitType"/>
+                    <include layout="@layout/layout_detail_row" android:id="@+id/rowNonUseStatus"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvNoCar2Data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/_20sdp"
+                    android:text="No Car Data Available"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/_11ssp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
         <!-- Bus Details Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardBusDetails"

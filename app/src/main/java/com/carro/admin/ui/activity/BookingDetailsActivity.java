@@ -3,6 +3,8 @@
 
 package com.carro.admin.ui.activity;
 
+import static com.carro.admin.utils.Utils.formatDate;
+
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
@@ -262,8 +264,88 @@ public class BookingDetailsActivity extends BaseActivity {
         // 6. Set Dynamic Payment and Location Details
         setPaymentDetails();
         setLocationDetails();
+        setDriverDetails();
+        setCarDetails();
+        setTripCharges();
+    }
+    private void setCarDetails() {
+        binding.cardCar2Details.setVisibility(View.VISIBLE);
+        setRowData(binding.rowCar2Number.getRoot(), "Car Number", bookingListModels.getmCarNumber());
+        setRowData(binding.rowFuelType.getRoot(), "Fuel Type", bookingListModels.getmCarFuel());
+        setRowData(binding.rowVehicleCategory.getRoot(), "Vehicle Category", bookingListModels.getmCarVehicleCategory());
+        setRowData(binding.rowFitUpTo.getRoot(), "Fit Up To",  DateFormater.formatTimestamp( bookingListModels.getmCarFitUpto()));
+        setRowData(binding.rowRegistrationDate.getRoot(), "Registration Date", DateFormater.formatTimestamp( bookingListModels.getmCarRegistrationDate()));
+        setRowData(binding.rowOwnerName.getRoot(), "Owner Name", bookingListModels.getmCarOwnerName());
+        setRowData(binding.rowFatherName.getRoot(), "Father Name", bookingListModels.getmCarFatherName());
+        setRowData(binding.rowPresentAddress.getRoot(), "Present Address",bookingListModels.getmCarPresentAddress());
+        setRowData(binding.rowPermanentAddress.getRoot(), "Permanent Address", bookingListModels.getmCarPermanentAddress());
+        setRowData(binding.rowChassisNumber.getRoot(), "Chassis Number", bookingListModels.getmCarChassisNumber());
+        setRowData(binding.rowEngineNumber.getRoot(), "Engine Number", bookingListModels.getmCarEngineNumber());
+        setRowData(binding.rowMaker.getRoot(), "Maker", bookingListModels.getmCarMaker());
+        setRowData(binding.rowModel.getRoot(), "Model", bookingListModels.getmCarModel());
+        setRowData(binding.rowBodyType.getRoot(), "Body Type", bookingListModels.getmCarBodyType());
+        setRowData(binding.rowColor.getRoot(), "Color", bookingListModels.getmCarColor());
+        setRowData(binding.rowManufacturingDate.getRoot(), "Manufacturing Date", DateFormater.formatTimestamp( bookingListModels.getmCarManufacturingDate()));
+        setRowData(binding.rowInsuranceCompany.getRoot(), "Insurance Company", bookingListModels.getmCarInsuranceCompany());
+        setRowData(binding.rowPolicyNumber.getRoot(), "Policy Number", bookingListModels.getmCarInsurancePolicyNumber());
+        setRowData(binding.rowInsuranceValidUpto.getRoot(), "Insurance Valid Upto", DateFormater.formatTimestamp( bookingListModels.getmCarInsuranceUpto()));
+        setRowData(binding.rowTaxValidUpto.getRoot(), "Tax Valid Upto", DateFormater.formatTimestamp( bookingListModels.getmCarTaxUpto()));
+        setRowData(binding.rowPuccNumber.getRoot(), "PUCC Number", bookingListModels.getmCarPuccNumber());
+        setRowData(binding.rowPuccValidUpto.getRoot(), "PUCC Valid Upto", DateFormater.formatTimestamp( bookingListModels.getmCarPuccUpto()));
+        setRowData(binding.rowPermitNumber.getRoot(), "Permit Number", bookingListModels.getmCarPermitNumber());
+        setRowData(binding.rowPermitIssueDate.getRoot(), "Permit Issue Date", DateFormater.formatTimestamp( bookingListModels.getmCarPermitIssueDate()));
+        setRowData(binding.rowPermitValidFrom.getRoot(), "Permit Valid From", DateFormater.formatTimestamp(bookingListModels.getmCarPermitValidFrom()));
+        setRowData(binding.rowPermitValidUpto.getRoot(), "Permit Valid Upto", DateFormater.formatTimestamp( bookingListModels.getmCarPermitValidUpto()));
+        setRowData(binding.rowPermitType.getRoot(), "Permit Type", bookingListModels.getmCarPermitType());
+        setRowData(binding.rowNonUseStatus.getRoot(), "Non-Use Status", bookingListModels.getmCarNonUseStatus());
+        checkSectionVisibility(
+                binding.containerCar2Data,
+                binding.tvNoCar2Data,
+                binding.rowCar2Number.getRoot(),
+                binding.rowFuelType.getRoot(),
+                binding.rowVehicleCategory.getRoot(),
+                binding.rowFitUpTo.getRoot(),
+                binding.rowRegistrationDate.getRoot(),
+                binding.rowOwnerName.getRoot(),
+                binding.rowFatherName.getRoot(),
+                binding.rowPresentAddress.getRoot(),
+                binding.rowPermanentAddress.getRoot(),
+                binding.rowChassisNumber.getRoot(),
+                binding.rowEngineNumber.getRoot(),
+                binding.rowMaker.getRoot(),
+                binding.rowModel.getRoot(),
+                binding.rowBodyType.getRoot(),
+                binding.rowColor.getRoot(),
+                binding.rowManufacturingDate.getRoot(),
+                binding.rowInsuranceCompany.getRoot(),
+                binding.rowPolicyNumber.getRoot(),
+                binding.rowInsuranceValidUpto.getRoot(),
+                binding.rowTaxValidUpto.getRoot(),
+                binding.rowPuccNumber.getRoot(),
+                binding.rowPuccValidUpto.getRoot(),
+                binding.rowPermitNumber.getRoot(),
+                binding.rowPermitIssueDate.getRoot(),
+                binding.rowPermitValidFrom.getRoot(),
+                binding.rowPermitValidUpto.getRoot(),
+                binding.rowPermitType.getRoot(),
+                binding.rowNonUseStatus.getRoot()
+        );
     }
 
+    private void setTripCharges() {
+//        setRowData(binding.rowDriverName.getRoot(), "Name", bookingListModels.getmDriverName());
+//        setRowData(binding.rowDriverMoNo.getRoot(), "Mobile Number",  bookingListModels.getmDriverMobile());
+//        setRowData(binding.rowLicExpiry.getRoot(), "Licence Expiry Date",  bookingListModels.getmDriverLicExDate());
+//        checkSectionVisibility(binding.containerDriverData,binding.tvNoDriverData,binding.rowDriverName.getRoot(),binding.rowDriverMoNo.getRoot(),binding.rowLicExpiry.getRoot());
+//        binding.cardDriverDetails.setVisibility(View.VISIBLE);
+    }
+    private void setDriverDetails() {
+        setRowData(binding.rowDriverName.getRoot(), "Name", bookingListModels.getmDriverName());
+        setRowData(binding.rowDriverMoNo.getRoot(), "Mobile Number",  bookingListModels.getmDriverMobile());
+        setRowData(binding.rowLicExpiry.getRoot(), "Licence Expiry Date",  bookingListModels.getmDriverLicExDate());
+        checkSectionVisibility(binding.containerDriverData,binding.tvNoDriverData,binding.rowDriverName.getRoot(),binding.rowDriverMoNo.getRoot(),binding.rowLicExpiry.getRoot());
+        binding.cardDriverDetails.setVisibility(View.VISIBLE);
+    }
     private void setPaymentDetails() {
         // Hide all optional fields by default
         binding.rowRentalCharges.getRoot().setVisibility(View.GONE);
