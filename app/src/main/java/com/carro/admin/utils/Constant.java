@@ -78,6 +78,7 @@ public class Constant {
         String NOTIFY_BOOKING = "m_notif_booking";
         String NOTIFY_TITLE = "m_notif_title";
         String NOTIFY_MESSAGE = "m_notif_message";
+        String FCM_TOKEN = "fcmtoken";
        // String USER_TYPE = "user_type";
 
 
@@ -108,6 +109,7 @@ public class Constant {
         String ADVERTISE = "advertise";
         String CHECK_BLOCK_WITH_ID = "check_block_with_id";
        // String NOTIFICATION_LIST = "notification_list";
+       String UPDATE_FCM = "update_fcm";
 
     }
 }

@@ -141,6 +141,12 @@ public interface ApiInterface {
             @Field(Constant.ApiKey.USER_ID) String user_id
     );
 
+    @FormUrlEncoded
+    @POST(Constant.EndPoint.UPDATE_FCM)
+    Call<BaseResponse> updateFCM(
+            @Field(Constant.ApiKey.USER_ID) String user_id,
+            @Field(Constant.ApiKey.FCM_TOKEN) String fcmtoken
+    );
 
     //  make changes ,.................
     @FormUrlEncoded
