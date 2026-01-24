@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,6 +30,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.Target;
+import com.carro.admin.api.response.BadgeNotifResponse;
 import com.carro.admin.api.response.commonResponse.BaseResponse;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private void initialization() {
         getAdvertise();
         updateFCM();
+        getBadgeNotifCount();
         NavHostFragment navHost = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.bottom_nav_fragment);
         assert navHost != null;
         navController = navHost.getNavController();
@@ -368,5 +371,42 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(getApplicationContext(), "" + msg, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
+    }
+
+    private void getBadgeNotifCount(){
+        String userData = PreferenceUtils.getString(Constant.PreferenceConstant.USER_DATA, MainActivity.this);
+        LoginModel loginModel = new Gson().fromJson(userData, LoginModel.class);
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+        Call<BadgeNotifResponse> call = apiService.badgeNotifCount(loginModel.getmAdminId(),loginModel.getmAdminType());
+        call.enqueue(new Callback<BadgeNotifResponse>() {
+            @Override
+            public void onResponse(Call<BadgeNotifResponse> call, Response<BadgeNotifResponse> response) {
+                try {
+                    if (String.valueOf(response.code()).equalsIgnoreCase(Constant.SUCCESS_RESPONSE_CODE)) {
+                        if (response.body().getResult().equalsIgnoreCase(Constant.SUCCESS_RESPONSE)) {
+                            int count=Integer.parseInt(response.body().getNotification());
+                            if(count>0){
+                                updateBadge(count);
+                            }
+                        }
+                    } else {
+                    }
+                } catch (Exception e) {
+                }
+            }
+
+            @Override
+            public void onFailure(Call<BadgeNotifResponse> call, Throwable t) {
+            }
+        });
+    }
+    public void updateBadge(int count) {
+        TextView badgeCount = findViewById(R.id.badge_count);
+        if (count > 0) {
+            badgeCount.setVisibility(View.VISIBLE);
+            badgeCount.setText(count > 99 ? "99+" : String.valueOf(count));
+        } else {
+            badgeCount.setVisibility(View.GONE);
+        }
     }
 }

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Carro Admin</string>
-    <string name="app_name2">Carro Rental Admin</string>
+    <string name="app_name">Carro Branch</string>
+    <string name="app_name2">Carro Rental Branch</string>
     <string name="welcome_to_carro_branch">🚗 Welcome to Carro Branch</string>
     <string name="sign_in_to_unlock_the_best_rental_deals_and_manage_your_bookings_with_ease">Sign in to unlock the best rental deals and manage your bookings with ease.</string>
     <string name="user_id">User Id</string>
