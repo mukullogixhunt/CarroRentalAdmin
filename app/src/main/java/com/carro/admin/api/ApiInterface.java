@@ -1,5 +1,6 @@
 package com.carro.admin.api;
 
+import com.carro.admin.api.response.BadgeNotifResponse;
 import com.carro.admin.api.response.BookingDetailsResponse;
 import com.carro.admin.api.response.BookingIdResponse;
 import com.carro.admin.api.response.BookingListResponse;
@@ -126,6 +127,12 @@ public interface ApiInterface {
             @Field(Constant.ApiKey.NOTIFY_TITLE) String m_notif_title,
             @Field(Constant.ApiKey.NOTIFY_MESSAGE) String m_notif_message
     );
+    @FormUrlEncoded
+    @POST(Constant.EndPoint.BADGE_NOTIFICATION)
+    Call<BadgeNotifResponse> badgeNotifCount(
+            @Field(Constant.ApiKey.USER_ID) String user_id,
+            @Field(Constant.ApiKey.USER_TYPE) String user_type
+    );
 
     @POST(Constant.EndPoint.ALL_PENDING_BOOKING)
     Call<BookingIdResponse> bookingIdList();
@@ -141,6 +148,12 @@ public interface ApiInterface {
             @Field(Constant.ApiKey.USER_ID) String user_id
     );
 
+    @FormUrlEncoded
+    @POST(Constant.EndPoint.UPDATE_FCM)
+    Call<BaseResponse> updateFCM(
+            @Field(Constant.ApiKey.USER_ID) String user_id,
+            @Field(Constant.ApiKey.FCM_TOKEN) String fcmtoken
+    );
 
     //  make changes ,.................
     @FormUrlEncoded

@@ -64,6 +64,7 @@ public class Constant {
         String USER_EMAIL = "user_email";
         String USER_PASS = "user_pswd";
         String USER_ID = "user_id";
+        String USER_TYPE = "user_type";
         String USER_NAME = "user_name";
         String USER_MOBILE = "user_mobile";
         String USER_PSWD = "user_pswd";
@@ -78,6 +79,7 @@ public class Constant {
         String NOTIFY_BOOKING = "m_notif_booking";
         String NOTIFY_TITLE = "m_notif_title";
         String NOTIFY_MESSAGE = "m_notif_message";
+        String FCM_TOKEN = "fcmtoken";
        // String USER_TYPE = "user_type";
 
 
@@ -104,10 +106,12 @@ public class Constant {
         String CUSTOMER = "customer";
         String INSERT_NOTIFICATION = "insert_notification_dtl";
         String ALL_PENDING_BOOKING = "all_pending_booking";
+        String BADGE_NOTIFICATION = "header_notification";
         String SELF_SERVICE_SUBS_BOOKING = "self_service_subs_booking";
         String ADVERTISE = "advertise";
         String CHECK_BLOCK_WITH_ID = "check_block_with_id";
        // String NOTIFICATION_LIST = "notification_list";
+       String UPDATE_FCM = "update_fcm";
 
     }
 }

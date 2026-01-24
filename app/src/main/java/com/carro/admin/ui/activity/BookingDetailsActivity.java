@@ -333,12 +333,27 @@ public class BookingDetailsActivity extends BaseActivity {
     }
 
     private void setTripCharges() {
-//        setRowData(binding.rowDriverName.getRoot(), "Name", bookingListModels.getmDriverName());
-//        setRowData(binding.rowDriverMoNo.getRoot(), "Mobile Number",  bookingListModels.getmDriverMobile());
-//        setRowData(binding.rowLicExpiry.getRoot(), "Licence Expiry Date",  bookingListModels.getmDriverLicExDate());
-//        checkSectionVisibility(binding.containerDriverData,binding.tvNoDriverData,binding.rowDriverName.getRoot(),binding.rowDriverMoNo.getRoot(),binding.rowLicExpiry.getRoot());
-//        binding.cardDriverDetails.setVisibility(View.VISIBLE);
+
+        // Set row data
+        setRowData(binding.rowTripMealProvided.getRoot(), "Meal Provided", bookingListModels.getmBkingMealProvide());
+        setRowData(binding.rowTripTollTax.getRoot(), "Toll Tax", bookingListModels.getmBkingTollTax());
+        setRowData(binding.rowTripParking.getRoot(), "Parking", bookingListModels.getmBkingParking());
+        setRowData(binding.rowTripOtherCharges.getRoot(), "Other Charges", bookingListModels.getmBkingOtherTitle());
+
+        // Check visibility of section
+        checkSectionVisibility(
+                binding.containerTripData,
+                binding.tvNoTripData,
+                binding.rowTripMealProvided.getRoot(),
+                binding.rowTripTollTax.getRoot(),
+                binding.rowTripParking.getRoot(),
+                binding.rowTripOtherCharges.getRoot()
+        );
+
+        // Show card if any row is visible
+        binding.cardTripDetails.setVisibility(binding.containerTripData.getVisibility());
     }
+
     private void setDriverDetails() {
         setRowData(binding.rowDriverName.getRoot(), "Name", bookingListModels.getmDriverName());
         setRowData(binding.rowDriverMoNo.getRoot(), "Mobile Number",  bookingListModels.getmDriverMobile());
