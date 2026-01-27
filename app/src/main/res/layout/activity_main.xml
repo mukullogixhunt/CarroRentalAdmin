@@ -89,7 +89,6 @@
                             android:src="@drawable/bell"
                             android:padding="@dimen/_2sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/iv_user"
                             app:layout_constraintTop_toTopOf="parent"
                             app:tint="@color/black" />
 
