@@ -11,11 +11,14 @@ import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 import com.bumptech.glide.Glide;
 import com.carro.admin.R;
 import com.carro.admin.ui.activity.SplashActivity;
+import com.carro.admin.utils.Constant;
+import com.carro.admin.utils.PreferenceUtils;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.google.gson.Gson;
@@ -31,7 +34,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private int numMessages = 0;
     private int notificationId = new Random().nextInt();
     int count = 0;
-
+    @Override
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+        PreferenceUtils.setString(
+                Constant.PreferenceConstant.FIREBASE_TOKEN,
+                token,
+                getApplicationContext());
+    }
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
